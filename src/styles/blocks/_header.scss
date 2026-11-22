@@ -1,0 +1,164 @@
+@use "../helpers" as *;
+@use "../variables" as *;
+
+.header {
+  position: relative;
+  width: 100%;
+  padding-block: to-rem(30);
+  background-color: $text-color;
+  color: $white-color;
+
+  @include respond-to("tablet") {
+    padding-block: to-rem(15);
+  }
+
+  &__container {
+    @include flex(row, space-between, center);
+  }
+
+  &__logo {
+    position: relative;
+    z-index: 100;
+    font-weight: 700;
+    font-size: to-rem(30);
+    line-height: 1.6;
+
+    @include respond-to("tablet") {
+      font-size: to-rem(18);
+    }
+
+    @include hover {
+      opacity: 0.8;
+    }
+  }
+
+  &__tel {
+    font-weight: 600;
+    font-size: to-rem(30);
+    line-height: 1.6;
+    text-align: right;
+
+    @include respond-to("tablet") {
+      @include flex(row, center, center);
+      font-size: 0;
+      width: to-rem(44);
+      height: to-rem(44);
+      margin-left: auto;
+      margin-right: to-rem(10);
+      background-color: rgba(255, 255, 255, 0.08);
+      background-image: url("../../assets/icons/phone.svg");
+      background-size: to-rem(24) to-rem(24);
+      background-position: center;
+      background-repeat: no-repeat;
+      border: to-rem(1) solid rgba(255, 255, 255, 0.2);
+      border-radius: to-rem(10);
+    }
+  }
+
+  &__nav {
+    @include respond-to("tablet") {
+      position: fixed;
+      inset: 0;
+      @include flex(column, center, center);
+      background-color: $text-color;
+      border-bottom: 1px solid $text-color;
+      padding: to-rem(80) to-rem(20) to-rem(40);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(to-rem(-12));
+      transition:
+        opacity $transition-duration ease,
+        transform $transition-duration ease,
+        visibility $transition-duration ease;
+      z-index: 99;
+
+      &.is-open {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+    }
+  }
+
+  &__burger {
+    display: none;
+
+    @include respond-to("tablet") {
+      position: relative;
+      display: block;
+      width: to-rem(44);
+      height: to-rem(44);
+      background: rgba(255, 255, 255, 0.08);
+      border: to-rem(1) solid rgba(255, 255, 255, 0.2);
+      border-radius: to-rem(10);
+      z-index: 100;
+      cursor: pointer;
+
+      span {
+        position: absolute;
+        left: to-rem(9);
+        width: to-rem(26);
+        height: to-rem(2);
+        border-radius: to-rem(2);
+        background-color: $white-color;
+        transition:
+          transform $transition-duration ease-in-out,
+          opacity $transition-duration ease-in-out,
+          width $transition-duration ease-in-out;
+        transform-origin: center;
+
+        &:nth-child(1) {
+          top: to-rem(17);
+        }
+
+        &:nth-child(2) {
+          top: to-rem(22);
+        }
+
+        &:nth-child(3) {
+          top: to-rem(27);
+          width: to-rem(13);
+        }
+      }
+
+      &.is-open {
+        span:nth-child(1) {
+          top: to-rem(21);
+          transform: rotate(45deg);
+        }
+        span:nth-child(2) {
+          opacity: 0;
+        }
+        span:nth-child(3) {
+          top: to-rem(21);
+          width: to-rem(26);
+          transform: rotate(-45deg);
+        }
+      }
+    }
+  }
+}
+
+.nav {
+  &__list {
+    @include flex(row, space-between, center, fluid(40, 20));
+
+    @include respond-to("tablet") {
+      flex-direction: column;
+      gap: to-rem(20);
+      text-align: center;
+    }
+  }
+
+  &__link {
+    font-weight: 400;
+    font-size: to-rem(20);
+    line-height: 1.6;
+    text-align: center;
+    transition: color $transition-duration ease;
+
+    @include hover {
+      color: $accent-color;
+    }
+  }
+}

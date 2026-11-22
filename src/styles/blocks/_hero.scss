@@ -1,0 +1,117 @@
+@use "sass:color";
+@use "../helpers" as *;
+@use "../variables" as *;
+
+.hero {
+  background-color: $text-color;
+  color: $white-color;
+  padding-top: to-rem(80);
+  overflow: hidden;
+
+  @include respond-to("tablet") {
+    padding-top: to-rem(20);
+  }
+
+  &__container {
+    @include flex(row, space-between, center);
+    position: relative;
+
+    @include respond-to("tablet") {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+
+  &__content {
+    flex-shrink: 0;
+    max-width: to-rem(516);
+    padding-bottom: to-rem(100);
+    z-index: 2;
+
+    @include respond-to("tablet") {
+      flex-shrink: 0;
+      max-width: 100%;
+      padding-bottom: to-rem(20);
+      @include flex(column, center, center);
+    }
+  }
+
+  &__title {
+    margin: 0 0 to-rem(20);
+    font-weight: 600;
+    @include fluid-text(70, 30, 1.6);
+    line-height: 1.6;
+    text-transform: uppercase;
+    white-space: nowrap;
+
+    @include respond-to("mobile-sm") {
+      white-space: normal;
+    }
+  }
+
+  &__descr {
+    margin: 0 0 to-rem(50);
+    font-weight: 400;
+    font-size: fluid(20, 16);
+    line-height: 1.6;
+
+    @include respond-to("tablet") {
+      margin-bottom: 0;
+      max-width: to-rem(450);
+    }
+  }
+
+  &__btn {
+    @include flex(row, center, center, null, null, true);
+    padding: to-rem(25) to-rem(54);
+    background-color: $accent-color;
+    color: $white-color;
+    font-weight: 400;
+    font-size: to-rem(18);
+    line-height: 1.6;
+    border-radius: to-rem(5);
+    transition: background-color $transition-duration ease;
+
+    @include hover {
+      background-color: color.adjust($accent-color, $lightness: -8%);
+    }
+
+    @include respond-to("tablet") {
+      position: absolute;
+      bottom: to-rem(40);
+      left: 50%;
+      transform: translateX(-50%);
+      width: calc(100% - #{to-rem(30)});
+      max-width: to-rem(380);
+      padding-block: to-rem(18);
+      z-index: 3;
+    }
+
+    @include respond-to("mobile") {
+      max-width: none;
+    }
+  }
+
+  &__image {
+    align-self: flex-end;
+    max-width: to-rem(680);
+    margin-right: to-rem(-80);
+
+    @include respond-to("desktop-sm") {
+      max-width: 55%;
+      margin-right: 0;
+    }
+
+    @include respond-to("tablet") {
+      align-self: center;
+      max-width: to-rem(380);
+      width: 100%;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  }
+}

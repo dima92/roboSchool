@@ -1,0 +1,105 @@
+@use "../helpers" as *;
+@use "../variables" as *;
+
+.tariffs {
+  padding-block: fluid(120, 60);
+  background-color: $white-color;
+  color: $text-color;
+
+  &__title {
+    margin: 0 0 fluid(60, 40);
+    font-weight: 600;
+    @include fluid-text(50, 30, 1.6);
+
+    @include respond-to("mobile") {
+      text-align: center;
+    }
+  }
+
+  &__list {
+    @include grid(3, 40, null, center);
+
+    @include respond-to("tablet") {
+      @include grid(1, 30);
+      max-width: to-rem(420);
+      margin-inline: auto;
+    }
+  }
+}
+
+.tariff-card {
+  @include flex(column, space-between, center);
+  padding: to-rem(40);
+  min-height: to-rem(460);
+  border: 1px solid rgba($text-color, 0.2);
+  border-radius: to-rem(20);
+  background-color: $white-color;
+  color: $text-color;
+  text-align: center;
+  transition:
+    transform $transition-duration ease,
+    box-shadow $transition-duration ease;
+
+  @include hover {
+    transform: translateY(to-rem(-6));
+    box-shadow: 0 to-rem(12) to-rem(30) rgba($text-color, 0.08);
+  }
+
+  @include respond-to("mobile") {
+    padding: to-rem(40) to-rem(20);
+    min-height: to-rem(390);
+  }
+
+  &--featured {
+    padding-block: to-rem(60);
+    min-height: to-rem(500);
+    background-color: $text-color;
+    border-color: $text-color;
+    color: $white-color;
+
+    @include respond-to("tablet") {
+      padding-block: to-rem(40);
+      min-height: to-rem(420);
+    }
+  }
+
+  &__name {
+    margin: 0 0 fluid(60, 40);
+    font-weight: 600;
+    @include fluid-text(30, 24, 1.6);
+  }
+
+  &__price {
+    margin-bottom: to-rem(20);
+    font-weight: 600;
+    @include fluid-text(50, 40, 1.6);
+    white-space: nowrap;
+  }
+
+  &__descr {
+    margin: 0 0 fluid(60, 40);
+    max-width: to-rem(250);
+    font-weight: 400;
+    @include fluid-text(18, 16, 1.6);
+  }
+
+  &__btn {
+    @include flex(row, center, center);
+    width: 100%;
+    padding: to-rem(25) to-rem(20);
+    background-color: $accent-color;
+    color: $white-color;
+    font-weight: 400;
+    @include fluid-text(18, 16, 1.6);
+    border-radius: to-rem(5);
+    transition: background-color $transition-duration ease;
+
+    @include hover {
+      background-color: darken($accent-color, 8%);
+    }
+
+    @include respond-to("mobile") {
+      padding-block: to-rem(18);
+    }
+  }
+}

@@ -1,0 +1,68 @@
+@use "../helpers" as *;
+@use "../variables" as *;
+
+.footer {
+  padding-block: to-rem(40);
+  background-color: $text-color;
+  color: $white-color;
+
+  &__container {
+    @include flex(row, space-between, flex-start, 20);
+
+    @include respond-to("mobile") {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  }
+
+  &__left {
+    @include flex(column, flex-start, flex-start, 5);
+
+    @include respond-to("mobile") {
+      display: contents;
+    }
+  }
+
+  &__logo {
+    font-weight: 700;
+    @include fluid-text(30, 18, 1.6);
+    color: $white-color;
+    transition: opacity $transition-duration ease;
+
+    @include hover {
+      opacity: 0.8;
+    }
+
+    @include respond-to("mobile") {
+      order: 1;
+      margin-bottom: to-rem(20);
+    }
+  }
+
+  &__tel {
+    font-weight: 600;
+    @include fluid-text(30, 16, 1.6);
+    color: $white-color;
+    transition: color $transition-duration ease;
+
+    @include hover {
+      color: $accent-color;
+    }
+
+    @include respond-to("mobile") {
+      order: 2;
+      margin-bottom: to-rem(40);
+    }
+  }
+
+  &__copy {
+    font-weight: 400;
+    @include fluid-text(16, 14, 1.6);
+    color: rgba($white-color, 0.7);
+
+    @include respond-to("mobile") {
+      order: 3;
+    }
+  }
+}

@@ -1,0 +1,126 @@
+@use "../helpers" as *;
+@use "../variables" as *;
+
+.order {
+  padding-block: fluid(87, 40);
+  background-color: $accent-color;
+  color: $white-color;
+
+  background-image: url("/src/assets/icons/percent-pattern.svg");
+  background-repeat: repeat-x;
+  background-position: bottom center;
+  background-size: auto to-rem(120);
+
+  @include respond-to("mobile") {
+    background-image: none;
+  }
+
+  &__container {
+    @include flex(row, space-between, flex-start, 40);
+    padding-inline: to-rem(60);
+
+    @include respond-to("desktop-sm") {
+      padding-inline: to-rem(15);
+    }
+
+    @include respond-to("tablet") {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  }
+
+  &__info {
+    max-width: to-rem(476);
+    padding-top: to-rem(19);
+
+    @include respond-to("tablet") {
+      padding-top: 0;
+      max-width: to-rem(500);
+    }
+  }
+
+  &__title {
+    margin: 0 0 to-rem(20);
+    font-weight: 600;
+    @include fluid-text(36, 30, 1.3);
+
+    @include respond-to("mobile") {
+      margin-bottom: to-rem(10);
+    }
+  }
+
+  &__descr {
+    margin: 0;
+    font-weight: 400;
+    @include fluid-text(20, 16, 1.3);
+  }
+
+  &__form {
+    width: 100%;
+    max-width: to-rem(500);
+  }
+}
+
+.form {
+  @include flex(column, flex-start, stretch, 10);
+
+  &__label {
+    display: block;
+    width: 100%;
+  }
+
+  &__input {
+    width: 100%;
+    height: to-rem(64);
+    padding-inline: to-rem(20);
+    background-color: #f6f6f6;
+    border: 2px solid transparent;
+    border-radius: to-rem(5);
+    font-family: inherit;
+    font-size: to-rem(18);
+    color: $text-color;
+    outline: none;
+    transition:
+      background-color $transition-duration ease,
+      border-color $transition-duration ease;
+
+    &::placeholder {
+      color: rgba($text-color, 0.7);
+    }
+
+    &:focus {
+      background-color: $white-color;
+      border-color: $text-color;
+    }
+
+    &.is-invalid {
+      border-color: $text-color;
+      background-color: #ffe8e9;
+    }
+  }
+
+  &__btn {
+    width: 100%;
+    height: to-rem(64);
+    margin-top: to-rem(10);
+    background-color: $text-color; // #141024
+    color: $white-color;
+    font-family: inherit;
+    font-weight: 400;
+    @include fluid-text(18, 16, 1.6);
+    border: none;
+    border-radius: to-rem(5);
+    cursor: pointer;
+    transition: opacity $transition-duration ease;
+
+    @include hover {
+      opacity: 0.9;
+    }
+
+    @include respond-to("mobile") {
+      margin-top: 0;
+      height: to-rem(60);
+    }
+  }
+}

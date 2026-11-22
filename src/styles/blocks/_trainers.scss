@@ -1,0 +1,165 @@
+@use "../helpers" as *;
+@use "../variables" as *;
+
+.trainers {
+  padding-block: fluid(120, 60);
+  background-color: $white-color;
+  color: $text-color;
+
+  &__title {
+    margin: 0 0 fluid(60, 40);
+    font-weight: 600;
+    @include fluid-text(50, 30, 1.6);
+
+    @include respond-to("mobile") {
+      text-align: center;
+    }
+  }
+
+  &__list {
+    display: flex;
+    gap: to-rem(40);
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    padding-bottom: to-rem(20);
+
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    @include respond-to("tablet") {
+      gap: to-rem(20);
+    }
+  }
+
+  &__item {
+    flex: 0 0 calc((100% - #{to-rem(80)}) / 3);
+    scroll-snap-align: start;
+
+    @include respond-to("tablet") {
+      flex: 0 0 calc((100% - #{to-rem(20)}) / 2);
+    }
+
+    @include respond-to("mobile") {
+      flex: 0 0 82%;
+    }
+  }
+
+  &__controls {
+    @include flex(row, space-between, center, 30);
+    margin-top: fluid(60, 30);
+  }
+
+  &__scrollbar {
+    position: relative;
+    flex-grow: 1;
+    max-width: to-rem(360);
+    height: to-rem(5);
+    background-color: rgba($text-color, 0.08);
+    border-radius: to-rem(40);
+    overflow: hidden;
+
+    &-drag {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 60%;
+      background-color: $text-color;
+      border-radius: to-rem(40);
+      transition: transform 0.1s linear;
+    }
+  }
+
+  &__nav {
+    @include flex(row, center, center, 10);
+
+    @include respond-to("mobile") {
+      display: none;
+    }
+  }
+
+  &__arrow {
+    position: relative;
+    width: to-rem(40);
+    height: to-rem(40);
+    border-radius: 50%;
+    background-color: $text-color;
+    border: none;
+    cursor: pointer;
+    transition:
+      opacity $transition-duration ease,
+      background-color $transition-duration ease;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: to-rem(8);
+      height: to-rem(8);
+      border-top: to-rem(2) solid $white-color;
+      border-right: to-rem(2) solid $white-color;
+    }
+
+    &--prev::before {
+      transform: translate(-35%, -50%) rotate(-135deg);
+    }
+
+    &--next::before {
+      transform: translate(-65%, -50%) rotate(45deg);
+    }
+
+    @include hover {
+      background-color: $accent-color;
+    }
+
+    &:disabled {
+      opacity: 0.3;
+      cursor: default;
+      pointer-events: none;
+    }
+  }
+}
+
+.trainer-card {
+  &__img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 360 / 500;
+    object-fit: cover;
+    border-radius: to-rem(20);
+    margin-bottom: to-rem(20);
+  }
+
+  &__name {
+    margin: 0 0 to-rem(10);
+    font-weight: 600;
+    @include fluid-text(24, 20, 1.6);
+  }
+
+  &__post {
+    margin: 0 0 to-rem(20);
+    font-weight: 400;
+    @include fluid-text(18, 14, 1.6);
+    color: rgba($text-color, 0.7);
+  }
+
+  &__btn {
+    padding: 0;
+    background: transparent;
+    border: none;
+    font-weight: 400;
+    @include fluid-text(18, 16, 1.6);
+    color: $accent-color;
+    cursor: pointer;
+    transition: opacity $transition-duration ease;
+
+    @include hover {
+      opacity: 0.7;
+    }
+  }
+}

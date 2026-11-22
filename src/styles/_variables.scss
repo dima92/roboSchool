@@ -1,0 +1,21 @@
+@use "helpers/functions" as *;
+
+// Сетка
+$container-width: 1160;
+$container-padding-x: 15;
+
+// Анимации
+$transition-duration: 0.3s;
+$transition-base: all $transition-duration ease-in-out;
+
+// Шрифты
+$font-family: "Jost", sans-serif;
+
+// ==========================================================================
+// ЦВЕТОВАЯ ПАЛИТРА (UI-KIT) — ПРОЕКТ ROBOSCHOOL
+// ==========================================================================
+
+$white-color: #fff;
+$text-color: #141024;
+$accent-color: #d52027;
+$light-grey-color: #f9f9f9;

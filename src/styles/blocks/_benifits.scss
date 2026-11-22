@@ -1,0 +1,112 @@
+@use "../helpers" as *;
+@use "../variables" as *;
+
+.benefits {
+  padding-block: fluid(100, 50);
+  background-color: $light-grey-color;
+  color: $text-color;
+
+  &__title {
+    margin: 0 0 fluid(60, 40);
+    font-weight: 600;
+    @include fluid-text(50, 30, 1.6);
+
+    @include respond-to("mobile") {
+      text-align: center;
+    }
+  }
+
+  &__list {
+    @include grid(3, 40);
+
+    @include respond-to("tablet") {
+      @include grid(2, 30);
+    }
+
+    @include respond-to("mobile") {
+      @include grid(1, 30);
+      text-align: center;
+    }
+  }
+
+  &__subtitle {
+    display: inline-flex;
+    align-items: center;
+    gap: to-rem(10);
+    margin: 0 0 to-rem(20);
+    font-weight: 600;
+    @include fluid-text(24, 20, 1.6);
+  }
+
+  &__descr {
+    margin: 0;
+    font-weight: 400;
+    @include fluid-text(18, 16, 1.6);
+    color: rgba($text-color, 0.7);
+  }
+}
+
+.tooltip {
+  position: relative;
+  display: inline-flex;
+
+  &__btn {
+    @include flex(row, center, center);
+    width: to-rem(24);
+    height: to-rem(24);
+    border-radius: 50%;
+    background-color: rgba($text-color, 0.08);
+    color: $text-color;
+    font-size: to-rem(14);
+    font-weight: 600;
+    line-height: 1;
+    border: none;
+    cursor: pointer;
+    transition:
+      background-color $transition-duration ease,
+      color $transition-duration ease;
+
+    @include hover {
+      background-color: $text-color;
+      color: $white-color;
+    }
+
+    &:hover + .tooltip__txt,
+    &:focus-visible + .tooltip__txt,
+    &:focus + .tooltip__txt {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+  }
+
+  &__txt {
+    position: absolute;
+    left: 0;
+    bottom: calc(100% + #{to-rem(10)});
+    width: max-content;
+    max-width: to-rem(260);
+    padding: to-rem(15) to-rem(20);
+    background-color: $white-color;
+    color: $text-color;
+    font-size: to-rem(16);
+    font-weight: 400;
+    line-height: 1.6;
+    border-radius: to-rem(5);
+    box-shadow: 0 to-rem(2) to-rem(8) rgba($text-color, 0.1);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(to-rem(6));
+    transition:
+      opacity $transition-duration ease,
+      visibility $transition-duration ease,
+      transform $transition-duration ease;
+    z-index: 10;
+    pointer-events: none;
+
+    @include respond-to("mobile") {
+      left: auto;
+      right: to-rem(-20);
+    }
+  }
+}
