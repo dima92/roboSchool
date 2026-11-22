@@ -1,0 +1,481 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="favicon.svg" type="image/x-icon" />
+    <title>RoboSchool</title>
+    <script type="module" crossorigin src="/roboSchool/assets/js/main-ChKPrU5H.js"></script>
+    <link rel="stylesheet" crossorigin href="/roboSchool/assets/css/main-BeM5G9iw.css">
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__container container">
+        <a href="#" class="header__logo logo" aria-label="Home">
+          ROBO.SCHOOL
+        </a>
+
+        <nav class="header__nav nav" aria-label="Main navigation">
+          <ul class="nav__list">
+            <li class="nav__item">
+              <a href="#" class="nav__link">О школе</a>
+            </li>
+            <li class="nav__item">
+              <a href="#" class="nav__link">Тренеры</a>
+            </li>
+            <li class="nav__item">
+              <a href="#" class="nav__link">Стоимость</a>
+            </li>
+          </ul>
+        </nav>
+
+        <a href="tel:+78000001122" class="header__tel" aria-label="Phone">
+          &nbsp;+7&nbsp;800&nbsp;000 11&nbsp;22
+        </a>
+
+        <button type="button" class="header__burger" aria-label="Open menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </header>
+    <main class="main">
+      <section class="hero">
+        <div class="container hero__container">
+          <div class="hero__content">
+            <h1 class="hero__title">ROBO SCHOOL</h1>
+            <p class="hero__descr">
+              Курсы повышения квалификации по робототехнике для педагогов
+              начальной школы
+            </p>
+            <a href="#tariffs" class="hero__btn btn">Записаться на курс</a>
+          </div>
+
+          <div class="hero__image">
+            <img
+              src="/roboSchool/assets/png/hero-girl-C9oPN3_o.png"
+              alt="Девушка с тетрадями на фоне логотипа"
+              width="783"
+              height="917"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section class="about" id="about">
+        <div class="container">
+          <h2 class="visually-hidden">О школе Robo School</h2>
+
+          <p class="about__descr">
+            <span class="about__descr-highlight">Robo School</span> — учреждение
+            для формирования кадрового педагогического резерва в сфере
+            робототехники и программирования
+          </p>
+
+          <ul class="about__list">
+            <li class="about__item">
+              <div class="about__digit">10</div>
+              <p class="about__text">
+                УМК по различным направлениям по робототехнике
+              </p>
+            </li>
+            <li class="about__item">
+              <div class="about__digit">20</div>
+              <p class="about__text">Школ, в которых запущена робототехника</p>
+            </li>
+            <li class="about__item">
+              <div class="about__digit">100</div>
+              <p class="about__text">
+                Педагогов прошедших курсы повышения квалификации
+              </p>
+            </li>
+            <li class="about__item">
+              <div class="about__digit">10 000</div>
+              <p class="about__text">
+                Обученных детей на базе собственных центров
+              </p>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="benefits">
+        <div class="container">
+          <h2 class="benefits__title title">Что вы получите после курса</h2>
+
+          <ul class="benefits__list">
+            <li class="benefits__item">
+              <h3 class="benefits__subtitle">Удостоверение</h3>
+              <p class="benefits__descr">
+                Дающее право преподавать робототехнику для детей 6-12 лет в
+                образовательных учреждениях
+              </p>
+            </li>
+
+            <li class="benefits__item">
+              <h3 class="benefits__subtitle">Знания</h3>
+              <p class="benefits__descr">
+                По основам разработки учебно-методических комплексов по
+                робототехнике и программированию
+              </p>
+            </li>
+
+            <li class="benefits__item">
+              <h3 class="benefits__subtitle">
+                Практику
+                <span class="tooltip">
+                  <button
+                    type="button"
+                    class="tooltip__btn"
+                    aria-label="Дополнительная информация"
+                    aria-describedby="tooltip-practice"
+                  >
+                    i
+                  </button>
+                  <span
+                    class="tooltip__txt"
+                    role="tooltip"
+                    id="tooltip-practice"
+                  >
+                    При наличии свободных мест
+                  </span>
+                </span>
+              </h3>
+              <p class="benefits__descr">
+                Возможность пройти практику по преподаванию робототехники на
+                базе R:ED LAB (в оффлайн или онлайн формате)
+              </p>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="trainers" id="trainers">
+        <div class="container">
+          <h2 class="trainers__title title">Профессиональные тренеры</h2>
+
+          <div class="trainers__slider" data-trainers-slider>
+            <ul class="trainers__list" data-trainers-list>
+              <li class="trainers__item">
+                <article class="trainer-card">
+                  <img
+                    src="/roboSchool/assets/jpg/trainer-1-CEQkNMgP.jpg"
+                    alt="Ирина Лайм"
+                    class="trainer-card__img"
+                    width="360"
+                    height="500"
+                  />
+                  <h3 class="trainer-card__name">Ирина Лайм</h3>
+                  <p class="trainer-card__post">
+                    преподаватель по робототехнике
+                  </p>
+                  <button
+                    type="button"
+                    class="trainer-card__btn"
+                    data-modal-target="trainer-1"
+                    data-trainer-id="trainer-1"
+                  >
+                    Подробнее
+                  </button>
+                </article>
+              </li>
+
+              <li class="trainers__item">
+                <article class="trainer-card">
+                  <img
+                    src="/roboSchool/assets/jpg/trainer-2-DRQ-ITdx.jpg"
+                    alt="Марина Орлова"
+                    class="trainer-card__img"
+                    width="360"
+                    height="500"
+                  />
+                  <h3 class="trainer-card__name">Марина Орлова</h3>
+                  <p class="trainer-card__post">
+                    преподаватель по робототехнике
+                  </p>
+                  <button
+                    type="button"
+                    class="trainer-card__btn"
+                    data-modal-target="trainer-2"
+                    data-trainer-id="trainer-2"
+                  >
+                    Подробнее
+                  </button>
+                </article>
+              </li>
+
+              <li class="trainers__item">
+                <article class="trainer-card">
+                  <img
+                    src="/roboSchool/assets/jpg/trainer-3-CgYO2y6-.jpg"
+                    alt="Максим Петров"
+                    class="trainer-card__img"
+                    width="360"
+                    height="500"
+                  />
+                  <h3 class="trainer-card__name">Максим Петров</h3>
+                  <p class="trainer-card__post">
+                    преподаватель по программированию
+                  </p>
+                  <button
+                    type="button"
+                    class="trainer-card__btn"
+                    data-modal-target="trainer-3"
+                    data-trainer-id="trainer-3"
+                  >
+                    Подробнее
+                  </button>
+                </article>
+              </li>
+
+              <li class="trainers__item">
+                <article class="trainer-card">
+                  <img
+                    src="/roboSchool/assets/jpg/trainer-4-BoZROR61.jpg"
+                    alt="Константин Назаров"
+                    class="trainer-card__img"
+                    width="360"
+                    height="500"
+                  />
+                  <h3 class="trainer-card__name">Константин Назаров</h3>
+                  <p class="trainer-card__post">
+                    преподаватель по робототехнике
+                  </p>
+                  <button
+                    type="button"
+                    class="trainer-card__btn"
+                    data-modal-target="trainer-4"
+                    data-trainer-id="trainer-4"
+                  >
+                    Подробнее
+                  </button>
+                </article>
+              </li>
+
+              <li class="trainers__item">
+                <article class="trainer-card">
+                  <img
+                    src="/roboSchool/assets/jpg/trainer-5-C2jKwvGn.jpg"
+                    alt="Лиза Весенняя"
+                    class="trainer-card__img"
+                    width="360"
+                    height="500"
+                  />
+                  <h3 class="trainer-card__name">Лиза Весенняя</h3>
+                  <p class="trainer-card__post">
+                    преподаватель по программированию
+                  </p>
+                  <button
+                    type="button"
+                    class="trainer-card__btn"
+                    data-modal-target="trainer-5"
+                    data-trainer-id="trainer-5"
+                  >
+                    Подробнее
+                  </button>
+                </article>
+              </li>
+            </ul>
+
+            <div class="trainers__controls">
+              <div class="trainers__scrollbar" data-trainers-scrollbar>
+                <div class="trainers__scrollbar-drag" data-trainers-drag></div>
+              </div>
+
+              <div class="trainers__nav">
+                <button
+                  type="button"
+                  class="trainers__arrow trainers__arrow--prev"
+                  aria-label="Предыдущий слайд"
+                  data-trainers-prev
+                ></button>
+                <button
+                  type="button"
+                  class="trainers__arrow trainers__arrow--next"
+                  aria-label="Следующий слайд"
+                  data-trainers-next
+                ></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div
+        class="modal"
+        data-trainer-modal
+        role="dialog"
+        aria-modal="true"
+        aria-hidden="true"
+      >
+        <div class="modal__window">
+          <button
+            type="button"
+            class="modal__close"
+            aria-label="Закрыть окно"
+            data-modal-close
+          >
+            Закрыть
+          </button>
+
+          <div class="modal__top">
+            <img
+              src=""
+              alt=""
+              class="modal__img"
+              width="160"
+              height="222"
+              data-modal-img
+            />
+            <div class="modal__info">
+              <h3 class="modal__name" data-modal-name></h3>
+              <p class="modal__post" data-modal-post></p>
+              <ul class="modal__socials" data-modal-socials></ul>
+            </div>
+          </div>
+
+          <div class="modal__tabs tabs" data-tabs>
+            <button
+              type="button"
+              class="tabs__mobile-trigger"
+              data-tabs-trigger
+            >
+              <span data-tabs-current>Образование</span>
+            </button>
+
+            <ul class="tabs__nav" role="tablist">
+              <li class="tabs__nav-item">
+                <button
+                  type="button"
+                  class="tabs__nav-btn is-active"
+                  data-tab-btn="education"
+                >
+                  Образование
+                </button>
+              </li>
+              <li class="tabs__nav-item">
+                <button
+                  type="button"
+                  class="tabs__nav-btn"
+                  data-tab-btn="experience"
+                >
+                  Опыт работы
+                </button>
+              </li>
+              <li class="tabs__nav-item">
+                <button
+                  type="button"
+                  class="tabs__nav-btn"
+                  data-tab-btn="awards"
+                >
+                  Награды
+                </button>
+              </li>
+            </ul>
+
+            <div class="tabs__content" data-modal-content></div>
+          </div>
+        </div>
+      </div>
+
+      <section class="tariffs" id="tariffs">
+        <div class="container">
+          <h2 class="tariffs__title title">Выберите нужный пакет</h2>
+
+          <ul class="tariffs__list">
+            <li class="tariffs__item">
+              <article class="tariff-card tariff-card--featured">
+                <h3 class="tariff-card__name">– PRO –</h3>
+                <div class="tariff-card__price">20.000 ₽</div>
+                <p class="tariff-card__descr">
+                  УМК по робототехнике и программированию
+                </p>
+                <a href="#order" class="tariff-card__btn">Оставить заявку</a>
+              </article>
+            </li>
+
+            <li class="tariffs__item">
+              <article class="tariff-card">
+                <h3 class="tariff-card__name">– ROBO –</h3>
+                <div class="tariff-card__price">15.000 ₽</div>
+                <p class="tariff-card__descr">УМК по робототехнике</p>
+                <a href="#order" class="tariff-card__btn">Оставить заявку</a>
+              </article>
+            </li>
+
+            <li class="tariffs__item">
+              <article class="tariff-card">
+                <h3 class="tariff-card__name">– PROG –</h3>
+                <div class="tariff-card__price">10.000 ₽</div>
+                <p class="tariff-card__descr">УМК по программированию</p>
+                <a href="#order" class="tariff-card__btn">Оставить заявку</a>
+              </article>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="order" id="order">
+        <div class="container order__container">
+          <div class="order__info">
+            <h2 class="order__title">Запишитесь на курс со скидкой 10%</h2>
+            <p class="order__descr">
+              Акция действительна до 10 марта 2022 года
+            </p>
+          </div>
+
+          <form action="#" class="order__form form" data-order-form novalidate>
+            <label class="form__label">
+              <span class="visually-hidden">Имя</span>
+              <input
+                type="text"
+                name="name"
+                class="form__input"
+                placeholder="Имя"
+                required
+              />
+            </label>
+
+            <label class="form__label">
+              <span class="visually-hidden">Телефон</span>
+              <input
+                type="tel"
+                name="phone"
+                class="form__input"
+                placeholder="Телефон"
+                required
+              />
+            </label>
+
+            <label class="form__label">
+              <span class="visually-hidden">E-mail</span>
+              <input
+                type="email"
+                name="email"
+                class="form__input"
+                placeholder="E-mail"
+                required
+              />
+            </label>
+
+            <button type="submit" class="form__btn">Оформить заявку</button>
+          </form>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="container footer__container">
+        <div class="footer__left">
+          <a href="#" class="footer__logo" aria-label="На главную"
+            >ROBO.SCHOOL</a
+          >
+          <small class="footer__copy">© ROBO.SCHOOL</small>
+        </div>
+
+        <a href="tel:+78000001122" class="footer__tel">+7 800 000 11 22</a>
+      </div>
+    </footer>
+
+  </body>
+</html>
